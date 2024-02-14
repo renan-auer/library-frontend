@@ -1,54 +1,60 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
-.container{
-  display: flex;
-  position: relative;
-}
-
-.container .sidebar {
-  width: 250px;
-  height: 100%;
-  background: #000;
-  padding: 30px 0px;
-  position: fixed;
-}
-.container .sidebar ul li{
-  padding: 15px;
-  border-bottom: 1px solid #bdb8d7;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  border-top: 1px solid rgba(255,255,255,0.05);
-}    
-
-.container .sidebar ul li a{
-  color: #bdb8d7;
-  display: block;
+div, span, p {
+    font-family: "Josefin Sans", sans-serif;
 }
 
-.container .sidebar ul li a .fa{
-  width: 25px;
+.container-fluid {
+    display: flex;
+    position: relative;
 }
 
-.container .sidebar ul li:hover{
-  background-color: #7d777717;
+.container-fluid .sidebar {
+    width: 250px;
+    height: 100%;
+    background: #000;
+    padding: 30px 0px;
+    position: fixed;
+    margin: 0px -12px;
 }
-    
-.container .sidebar ul li:hover a{
-  color: #fff;
-}
- 
-.container .content{
-  width: 100%;
-  margin-left: 250px;
+.container-fluid .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.container .content .header {
-    padding: 20px; 
-    background: #000; 
+.container-fluid .sidebar ul li a {
+    color: #bdb8d7;
+    display: block;
+}
+
+.container-fluid .sidebar ul li a .fa {
+    width: 25px;
+}
+
+.container-fluid .sidebar ul li:hover {
+    background-color: #7d777717;
+}
+
+.container-fluid .sidebar ul li:hover a {
+    color: #fff;
+}
+
+.container-fluid .content {
+    width: 100%;
+    margin-left: 238px;
+}
+
+.container-fluid .content .header {
+    padding: 20px;
+    background: #000;
     color: #fff;
     border-bottom: 1px solid #e0e4e8;
 }
 
-.container .content .info{
-  margin: 20px;
-  line-height: 25px;
+.container-fluid .content .info {
+    margin: 20px;
+    line-height: 25px;
 }
