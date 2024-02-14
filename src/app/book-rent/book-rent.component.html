@@ -1,0 +1,74 @@
+<h3>Aluguel de Livros</h3>
+
+<div class="alert" [ngClass]="classAlert" *ngIf="showAlert">
+    {{messageAlert}}
+</div>
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="newRent()"
+            data-bs-target="#staticBackdrop">Alugar novo livro</button>
+    </div>
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Usuário</th>
+                    <th scope="col">Livro</th>
+                    <th scope="col">Data Início</th>
+                    <th scope="col">Data Fim</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rent of booksRent">
+                    <td>{{rent.username}}</td>
+                    <td>{{rent.book.name}}</td>
+                    <td>{{rent.startDate}}</td>
+                    <td>{{rent.endDate || 'Não devolvido'}}</td>
+                    <td>
+                        <div class="d-flex" style="gap: 1rem;">
+                            <button class="btn btn-outline-primary" (click)="returnBook(rent)">Devolver Livro</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="booksRent.length == 0">
+                    <td colspan="5" class="text-center">Nenhum aluguel realizado</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Alugar Livro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="username">Usuário</label>
+                        <input class="form-control" id="username" [(ngModel)]="username">
+                    </div>
+                    <div class="col-12">
+                        <label for="book">Livro</label>
+                        <select class="form-control" id="book" [(ngModel)]="bookId">
+                            <option *ngFor="let book of books" [value]="book.id">{{book.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" (click)="rentBook()" data-bs-dismiss="modal"
+                    [disabled]="!username || !bookId">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

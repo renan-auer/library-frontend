@@ -3,11 +3,13 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { BookComponent } from "./book/book.component";
+import { BookRentComponent } from "./book-rent/book-rent.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "dashboard", pathMatch: "full" },
   { path: "dashboard", component: DashboardComponent },
   { path: "livros", component: BookComponent },
+  { path: "aluguel", component: BookRentComponent },
 ];
 
 @NgModule({

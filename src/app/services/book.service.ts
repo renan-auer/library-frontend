@@ -13,7 +13,7 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  list(name: string, author: string) {
+  list(name?: string, author?: string) {
     let url = `${environment.urlAPI}/book?`
     if(name) {
       url = `${url}name=${name}&`
